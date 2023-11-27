@@ -1,6 +1,8 @@
-import Calculator from "./Calculator";
-import Stocks from "./Stocks";
-import Weather from "./Weather";
+import dynamic from "next/dynamic";
+
+const Calculator = dynamic(() => import("./Calculator"));
+const Stocks = dynamic(() => import("./Stocks"));
+const Weather = dynamic(() => import("./Weather"));
 
 type PropType = {
   inputValue: string;
