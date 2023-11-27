@@ -1,9 +1,12 @@
-import React from 'react'
+import weather from "@/assets/weather.png";
+import Image from "next/image";
 
 const Weather = () => {
   return (
-    <div>Weather</div>
-  )
-}
+    <div>
+      <Image src={weather} alt="weather" width={1080} height={1080} />
+    </div>
+  );
+};
 
-export default Weather
+export default Weather;
