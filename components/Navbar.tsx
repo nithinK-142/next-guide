@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import ThemeSwitch from "./ThemeSwitch";
 
 const Navbar = () => {
   return (
@@ -9,15 +9,7 @@ const Navbar = () => {
         <div className="flex space-x-2">
           <Link href={"/"}>Home</Link>
           <Link href={"/"}>About</Link>
-          <button>
-            <Image
-              src="./sun.svg"
-              alt="sun"
-              className="h-6"
-              width={24}
-              height={24}
-            />
-          </button>
+          <ThemeSwitch />
         </div>
       </div>
     </div>
