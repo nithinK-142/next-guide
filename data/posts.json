@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Getting Started with React",
+    "publishedDate": "January 01, 2024",
+    "readTime": "4 min",
+    "description": "Learn the basics of React and how to build interactive user interfaces with the popular JavaScript library.",
+    "imageURL": "/blog_post-1_react.jpg"
+  },
+  {
+    "title": "Introduction to Machine Learning",
+    "publishedDate": "December 25, 2023",
+    "readTime": "1 min",
+    "description": "Explore the fundamentals of machine learning, including supervised and unsupervised learning, algorithms, and applications.",
+    "imageURL": "/blog_post-2_machineLearning.avif"
+  },
+  {
+    "title": "Cooking Tips for Beginners",
+    "publishedDate": "November 04, 2023",
+    "readTime": "3 min",
+    "description": "Discover essential cooking tips and tricks for beginners to enhance your culinary skills and create delicious meals.",
+    "imageURL": "/blog_post-3_cooking.jpg"
+  }
+]

@@ -1,9 +1,11 @@
+import BlogPost from "@/components/BlogPost";
 import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-4">
+    <div className="w-[46rem]">
       <Hero />
-    </main>
+      <BlogPost />
+    </div>
   );
 }
