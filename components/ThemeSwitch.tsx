@@ -14,9 +14,9 @@ const ThemeSwitch = () => {
     return (
       <Image
         src="data:image/svg+xml;base64,PHN2ZyBzdHJva2U9IiNGRkZGRkYiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMCIgdmlld0JveD0iMCAwIDI0IDI0IiBoZWlnaHQ9IjIwMHB4IiB3aWR0aD0iMjAwcHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB4PSIyIiB5PSIyIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHJ4PSIyIj48L3JlY3Q+PC9zdmc+Cg=="
-        width={24}
-        height={24}
-        sizes="24x24"
+        width={32}
+        height={32}
+        sizes="32x32"
         alt="Loading Light/Dark Toggle"
         priority={false}
         title="Loading Light/Dark Toggle"
@@ -28,9 +28,9 @@ const ThemeSwitch = () => {
       <Image
         src="/sun.svg"
         alt="sun"
-        className="h-6"
-        width={24}
-        height={24}
+        className="h-8"
+        width={32}
+        height={32}
         onClick={() => setTheme("light")}
       />
     );
@@ -41,9 +41,9 @@ const ThemeSwitch = () => {
       <Image
         src="/moon.svg"
         alt="moon"
-        className="h-6"
-        width={24}
-        height={24}
+        className="h-8 transform -rotate-12"
+        width={32}
+        height={32}
         onClick={() => setTheme("dark")}
       />
     );
