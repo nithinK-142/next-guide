@@ -9,7 +9,7 @@ const Hero = () => {
         </div>
         <h1 className="text-[2.5rem] font-medium pl-12 flex flex-col items-center">
           <span className="whitespace-nowrap">Hello and Welcome</span>
-          <span className="block">👋 I'm Lorem.</span>
+          <span className="block">👋 I&apos;m Lorem.</span>
         </h1>
       </div>
     </div>
