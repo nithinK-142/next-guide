@@ -23,7 +23,3 @@ body {
     text-wrap: balance;
   }
 }
-
-h2 {
-  @apply text-center pt-24 text-xl;
-}
