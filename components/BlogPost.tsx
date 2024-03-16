@@ -1,5 +1,6 @@
 import posts from "@/data/posts.json";
 import Image from "next/image";
+import Link from "next/link";
 
 const BlogPost = () => {
   const totalPosts = posts.length;
@@ -13,7 +14,9 @@ const BlogPost = () => {
           }`}
         >
           <div className="pr-2">
-            <h2 className="text-3xl pb-2 hover:underline cursor-pointer">{post.title}</h2>
+            <div className="text-3xl pb-2 hover:underline cursor-pointer">
+              <Link href={`/post/${post.title}`}>{post.title}</Link>
+            </div>
             <div className="flex text-sm opacity-90">
               <p className="pb-2">{post.publishedDate}</p>
               <p className="pl-4">📖 {post.readTime} read</p>
@@ -26,7 +29,7 @@ const BlogPost = () => {
               alt={post.title}
               height={200}
               width={200}
-              className="h-full w-full object-cover text-transparent inset-0 rounded-md"
+              className="h-full object-cover text-transparent inset-0 rounded-md"
             />
           </div>
         </article>
