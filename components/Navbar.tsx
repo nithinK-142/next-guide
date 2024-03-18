@@ -10,11 +10,11 @@ const Navbar = () => {
           <h2 className=" text-3xl font-mono font-semibold">NextDark</h2>
         </Link>
         <div className="flex items-center space-x-4 text-xl">
-          <Link href={"/"}>
+          <Link href={"https://nithin-me.vercel.app"}>
             <Image src="/home.svg" alt="home" width={32} height={32} />
           </Link>
           <Link
-            href={"https://github.com/nithinK-142?tab=repositories"}
+            href={"https://github.com/nithinK-142"}
             rel="noreferrer"
             target="_blank"
           >
