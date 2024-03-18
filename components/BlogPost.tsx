@@ -15,7 +15,7 @@ const BlogPost = () => {
         >
           <div className="pr-2">
             <div className="text-3xl pb-2 hover:underline cursor-pointer">
-              <Link href={`/post/${post.title}`}>{post.title}</Link>
+              <Link href={`/post/${post.url}`}>{post.title}</Link>
             </div>
             <div className="flex text-sm opacity-90">
               <p className="pb-2">{post.publishedDate}</p>

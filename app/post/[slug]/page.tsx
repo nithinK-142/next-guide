@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 type BlogPost = {
+  url: string;
   title: string;
   publishedDate: string;
   author: string;
@@ -22,9 +23,8 @@ const postsData = cache(async () => {
 });
 
 const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
-  const decodedSlug = decodeURIComponent(params.slug);
   const posts = await postsData();
-  const post = posts.find((p) => p.title === decodedSlug);
+  const post = posts.find((p) => p.url === params.slug);
 
   return (
     <div className="flex flex-col mt-16 w-[46rem]">
@@ -40,7 +40,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
         <div>Post not found</div>
       ) : (
         <article>
-          <h1 className="text-4xl font-bold mb-2">{decodedSlug}</h1>
+          <h1 className="text-4xl font-bold mb-2">{post.title}</h1>
           <h3 className="text-lg mb-2">
             Written by {post.author} on {post.publishedDate}
           </h3>
