@@ -45,15 +45,18 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
             Written by {post.author} on {post.publishedDate}
           </h3>
           <div className="flex flex-col">
-            <div className="h-full w-full flex items-center justify-center my-6">
+            <div className="min-h-[6rem] min-w-[14rem] my-6">
               <Image
                 src={post.imageURL}
                 alt={post.title}
-                height={1080}
                 width={1080}
-                className="h-1/2 w-1/2 object-cover text-transparent inset-0 rounded-md"
+                height={1080}
+                objectFit="cover"
+                objectPosition="center"
+                className="rounded-md"
               />
             </div>
+
             <p>{post.content}</p>
           </div>
         </article>
