@@ -8,10 +8,7 @@ export default function Authenticate() {
       <div className="flex- flex-col space-y-6">
         <h3 className="text-green-400/80 text-lg">
           Signed in as
-          <span className="text-green-400 text-2xl">
-            {" "}
-            {session.user?.email}
-          </span>
+          <span className="text-green-400 text-2xl"> {session.user?.name}</span>
         </h3>
         <button
           onClick={() => signOut()}

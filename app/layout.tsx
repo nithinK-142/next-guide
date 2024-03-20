@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Kanit } from "next/font/google";
 import "./globals.css";
-import SessionWrapper from "../components/session-wrapper";
+import AuthProvider from "@/context/AuthProvider";
 
 const kanit = Kanit({
   weight: ["100", "400", "500", "600", "700"],
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={kanit.className}>
-        <SessionWrapper>{children}</SessionWrapper>
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );
