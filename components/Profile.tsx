@@ -1,9 +1,9 @@
-import { OPTIONS } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth/next";
 import SignoutButton from "./SignoutButton";
 
 const Profile = async () => {
-  const session = await getServerSession(OPTIONS);
+  const session = await getServerSession(authOptions);
   return (
     session && (
       <div className="flex- flex-col space-y-6">
