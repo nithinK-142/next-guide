@@ -1,14 +1,11 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
-import { useUser } from "@auth0/nextjs-auth0/client";
+import { getSession } from "@auth0/nextjs-auth0";
 import Logout from "./Logout";
 import Login from "./Login";
 
-const ProfileClient = () => {
-  const { user, error, isLoading } = useUser();
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
+const ProfileClient = async () => {
+  const session = await getSession();
+  const user = session?.user;
+  console.log(session);
 
   return user ? (
     <div className="flex- flex-col space-y-6">
