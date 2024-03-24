@@ -8,7 +8,7 @@ async function getBranches() {
   const res = await fetch(
     "https://api-branch.vercel.app/next-guide?links=true",
     {
-      next: { revalidate: 1000 * 60 * 2 },
+      cache: "no-cache",
     }
   );
 
