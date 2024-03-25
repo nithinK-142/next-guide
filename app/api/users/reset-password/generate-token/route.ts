@@ -30,7 +30,7 @@ export async function POST(request: Request) {
 
     const encryptedTokenId = resetToken._id.toString();
     // const encryptedTokenId = encryptId(resetToken._id.toString());
-    const verificationLink = `http://localhost:3000/reset-password/verify-token?verifyToken=${token}&verifyTokenId=${encryptedTokenId}`;
+    const verificationLink = `${process.env.NEXTAUTH_MONGO_URL}/reset-password/verify-token?verifyToken=${token}&verifyTokenId=${encryptedTokenId}`;
 
     console.log(verificationLink);
 
