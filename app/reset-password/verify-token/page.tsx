@@ -1,6 +1,5 @@
 "use client";
 import axios from "axios";
-import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { FormEvent, useEffect } from "react";
 import toast from "react-hot-toast";
@@ -8,15 +7,13 @@ import toast from "react-hot-toast";
 const VerifyToken = () => {
   const searchParams = useSearchParams();
   const token = searchParams.get("verifyToken");
+  const tokenId = searchParams.get("verifyTokenId");
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const tokenFromURL = searchParams.get("verifyTokenId");
-      if (tokenFromURL) {
-        const decodedToken = decodeURIComponent(tokenFromURL);
-        localStorage.setItem("tokenId", decodedToken);
-      }
+      localStorage.setItem("tokenId", tokenId as string);
     }
-  }, [searchParams]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const router = useRouter();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {

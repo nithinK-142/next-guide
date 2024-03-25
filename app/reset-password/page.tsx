@@ -1,6 +1,5 @@
 "use client";
 import axios from "axios";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import toast from "react-hot-toast";
@@ -59,7 +58,6 @@ const ResetPassword = () => {
           return "Password has been reset, now login!";
         },
         error: (err: any) => `Password reset failed: ${err}`,
-        // ${err.response.data}
       });
     } catch (error) {
       console.log(error);
