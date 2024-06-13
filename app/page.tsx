@@ -36,7 +36,11 @@ export default function Home() {
             key={index}
             className="flex items-center justify-between px-4 py-2 mb-2 text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white"
           >
-            <h2 className="text-xl font-semibold tracking-wider">{title}</h2>
+            <h2 className="text-xl tracking-wider">
+              <a href={`https://${url}.vercel.app`} target="_blank">
+                {title}
+              </a>
+            </h2>
             <div className="flex justify-between space-x-8">
               <a
                 href={`https://github.com/nithinK-142/${gitUrl}`}
