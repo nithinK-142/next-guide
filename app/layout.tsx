@@ -8,8 +8,8 @@ const kanit = Kanit({
 });
 
 export const metadata: Metadata = {
-  title: "NextJs Guide",
-  description: "Guide to create nextjs app.",
+  title: "Framework Guide",
+  description: "Framework Guide app.",
 };
 
 export default function RootLayout({
