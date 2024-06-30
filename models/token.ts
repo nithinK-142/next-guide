@@ -14,8 +14,12 @@ const ResetTokenSchema: Schema<ResetToken> = new Schema({
   tokenVerified: { type: Boolean, required: true, default: false },
 });
 
+// const ResetTokenModel =
+//   (mongoose.models.ResetToken as mongoose.Model<ResetToken>) ||
+//   mongoose.model("ResetToken", ResetTokenSchema);
+
 const ResetTokenModel =
-  (mongoose.models.ResetToken as mongoose.Model<ResetToken>) ||
-  mongoose.model("ResetToken", ResetTokenSchema);
+  mongoose.models.ResetToken ||
+  mongoose.model<ResetToken>("ResetToken", ResetTokenSchema);
 
 export default ResetTokenModel;
