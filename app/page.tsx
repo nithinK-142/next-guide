@@ -1,10 +1,12 @@
-import BranchList from "./BranchList";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center text-center">
-      <h1 className="text-center text-2xl my-20">NextJs Guide</h1>
-      <BranchList />
-    </main>
+    <div className="p-8 flex flex-col items-center gap-8">
+      <h1 className="text-2xl">Next.js Parallel Routes</h1>
+      <Link href="/pokemon" className="text-xl underline">
+        Pokemon
+      </Link>
+    </div>
   );
 }
