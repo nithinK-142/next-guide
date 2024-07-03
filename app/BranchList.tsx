@@ -4,17 +4,18 @@ interface Branch {
 }
 
 async function getBranches() {
-  "use server";
-  const res = await fetch(process.env.API_BRANCH_URL!, {
-    cache: "no-cache",
-  });
+  try {
+    const res = await fetch(process.env.API_BRANCH_URL!, { cache: "no-cache" });
 
-  if (!res.ok) {
-    console.log("Failed to fetch data");
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+
+    return await res.json();
+  } catch (error: any) {
+    console.error("Failed to fetch or parse branches:", error.message);
     return [];
   }
-
-  return res.json();
 }
 
 const BranchList = async () => {
