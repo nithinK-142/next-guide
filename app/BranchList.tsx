@@ -16,6 +16,7 @@ async function getBranches() {
 
   return res.json();
 }
+
 const BranchList = async () => {
   const branches: Branch[] = await getBranches();
 
@@ -24,7 +25,7 @@ const BranchList = async () => {
       {branches.map(({ branchName, vercelLink }, index) => (
         <div
           key={index}
-          className="flex items-center justify-between px-4 py-2 mb-2 text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          className="flex items-center justify-between px-4 py-2 mb-2 text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white group"
         >
           <div className="inline-flex items-center h-4">
             <svg
@@ -37,6 +38,7 @@ const BranchList = async () => {
             <a
               href={`https://github.com/nithinK-142/next-guide/tree/${branchName}`}
               target="_blank"
+              className="group-hover:underline underline-offset-2 group-hover:text-red-200"
             >
               {branchName}
             </a>
@@ -45,7 +47,7 @@ const BranchList = async () => {
             <a
               href={`https://next-guide-git-${vercelLink}-nithink142s-projects.vercel.app`}
               target="_blank"
-              className="h-4 dark:fill-white"
+              className="h-4 dark:fill-white group-hover:scale-125 transition-transform duration-300"
             >
               <svg viewBox="0 0 512 512" className="h-full">
                 <path fillRule="evenodd" d="M256,48,496,464H16Z" />
