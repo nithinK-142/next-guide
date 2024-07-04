@@ -19,7 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={kanit.className}>{children}</body>
+      <body className={kanit.className}>
+        <main className="flex flex-col items-center text-center px-20">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }

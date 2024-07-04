@@ -1,10 +1,12 @@
-import AnimeCard, { AnimeProp } from "./AnimeCard";
-import { data } from "./_data";
+import LoadMore from "@/components/LoadMore";
+import AnimeCard, { AnimeProp } from "../components/AnimeCard";
+import { fetchAnime } from "./action";
 
-export default function Home() {
+export default async function Home() {
+  const data = await fetchAnime(1);
   return (
-    <main className="flex flex-col items-center text-center">
-      <h1 className="text-center text-2xl my-20 tracking-widest group">
+    <>
+      <h1 className="text-center text-2xl my-10 tracking-widest group">
         <span className="text-4xl inline-block rotate-12 group-hover:rotate-0 transition-transform duration-300">
           A
         </span>
@@ -20,10 +22,12 @@ export default function Home() {
       </h1>
 
       <section className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
-        {data.map((anime: AnimeProp, index) => (
+        {data.map((anime: AnimeProp, index: number) => (
           <AnimeCard key={anime.id} anime={anime} index={index} />
         ))}
       </section>
-    </main>
+
+      <LoadMore />
+    </>
   );
 }
