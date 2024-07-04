@@ -1,11 +1,13 @@
 "use client";
-import { fetchAnime } from "@/app/action";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import AnimeCard, { AnimeProp } from "./AnimeCard";
+import { fetchAnime } from "@/app/action";
+import { RenderAnime } from "./RenderAnime";
+import { AnimeProp } from "@/utils/constants";
 
 let page = 2;
+
 function LoadMore() {
   const { ref, inView } = useInView();
   const [data, setData] = useState<AnimeProp[]>([]);
@@ -18,19 +20,15 @@ function LoadMore() {
   }, [inView, data]);
   return (
     <>
-      <section className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
-        {data.map((anime: AnimeProp, index: number) => (
-          <AnimeCard key={anime.id} anime={anime} index={index} />
-        ))}
-      </section>
+      <RenderAnime data={data} />
 
-      <section className="flex justify-center items-center w-full">
+      <section className="flex justify-center items-center w-full mb-4">
         <div ref={ref}>
           <Image
             src="./spinner.svg"
             alt="spinner"
-            width={56}
-            height={56}
+            width={40}
+            height={40}
             className="object-contain"
           />
         </div>
