@@ -8,7 +8,7 @@ const kanit = Kanit({
 });
 
 export const metadata: Metadata = {
-  title: "Framework Guide",
+  title: "Branch Sentinel",
   description: "Framework Guide app.",
 };
 
