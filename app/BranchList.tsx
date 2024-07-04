@@ -5,7 +5,9 @@ interface Branch {
 
 async function getBranches() {
   try {
-    const res = await fetch(process.env.API_BRANCH_URL!, { cache: "no-cache" });
+    const res = await fetch(process.env.BRANCH_SENTINEL_URL!, {
+      cache: "no-cache",
+    });
 
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
