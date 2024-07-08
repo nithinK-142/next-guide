@@ -7,15 +7,15 @@ import { Providers } from "@/providers/NextThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Dark Mode",
-  description: "Toggle modes light and dark, created using next app.",
+  title: "Blog Lite",
+  description: "nextjs blog app.",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`bg-gray-50 dark:bg-slate-800 ${inter.className}`}>
