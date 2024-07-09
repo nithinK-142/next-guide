@@ -24,11 +24,11 @@ const BranchList = async () => {
   const branches: Branch[] = await getBranches();
 
   return (
-    <div className="w-72 sm:w-96 sm:floating-scrollbar">
+    <div className="w-72 sm:w-[26rem] sm:floating-scrollbar">
       {branches.map(({ branchName, vercelLink }, index) => (
         <div
           key={index}
-          className="flex items-center justify-between px-4 py-2 mb-2 text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white group"
+          className="flex items-center justify-between px-4 py-2 mb-2 text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 hover:dark:bg-gray-800 hover:dark:border-gray-700/10 dark:border-gray-600 dark:text-white group"
         >
           <div className="inline-flex items-center h-4">
             <svg
@@ -41,7 +41,7 @@ const BranchList = async () => {
             <a
               href={`https://github.com/nithinK-142/next-guide/tree/${branchName}`}
               target="_blank"
-              className="group-hover:underline underline-offset-2 group-hover:text-red-200"
+              className="group-hover:tracking-wide transition-all duration-300"
             >
               {branchName}
             </a>
